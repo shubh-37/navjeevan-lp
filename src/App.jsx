@@ -5,6 +5,10 @@ import rice from './assets/rice.webp';
 import tea from './assets/tea.jpg';
 import atta from './assets/atta.webp';
 import oil from './assets/oil.jpg';
+import offer1 from './assets/offer-1.jpeg';
+import offer3 from './assets/offer-3.jpeg';
+import offer4 from './assets/offer-4.jpeg';
+import whatsapp from './assets/Whatsapp.svg';
 const App = () => {
   const offers = [
     {
@@ -12,21 +16,21 @@ const App = () => {
       title: 'Weekend Special',
       description: 'Get 20% off on all groceries',
       discount: '20% OFF',
-      image: '/api/placeholder/300/200'
-    },
-    {
-      id: 2,
-      title: 'Festive Offer',
-      description: 'Buy 1 Get 1 Free on selected items',
-      discount: 'Buy 1 Get 1',
-      image: '/api/placeholder/300/200'
+      image: offer1
     },
     {
       id: 3,
       title: 'Bulk Purchase',
       description: 'Extra 10% off on purchases above ₹5000',
       discount: '10% OFF',
-      image: '/api/placeholder/300/200'
+      image: offer3
+    },
+    {
+      id: 4,
+      title: 'Bulk Purchase',
+      description: 'Extra 10% off on purchases above ₹5000',
+      discount: '10% OFF',
+      image: offer4
     }
   ];
 
@@ -107,6 +111,10 @@ const App = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+  function openWhatsapp() {
+    window.open('https://wa.me/918766860657', '_blank');
+  }
+
   return (
     <div className="font-sans text-gray-800">
       {/* Header */}
@@ -121,9 +129,9 @@ const App = () => {
             transition={{ duration: 0.5 }}
           />
           <div className="text-center md:text-right mt-4 md:mt-0">
-            <p className="flex items-center justify-center md:justify-end">
-              <FaPhone className="mr-2" /> +91 8766860657
-            </p>
+            <button className="flex items-center justify-center md:justify-end cursor-pointer" onClick={openWhatsapp}>
+              <FaPhone className="mr-1" />/<img src={whatsapp} alt="" className="mr-2 ml-1" /> +91 8766860657
+            </button>
             <p className="flex items-center justify-center md:justify-end">
               <FaEnvelope className="mr-2" /> contact@navjeevan.com
             </p>
@@ -150,7 +158,7 @@ const App = () => {
                 className="p-4 bg-white shadow rounded-lg text-center"
                 whileHover={{ scale: 1.05 }}
               >
-                <img src={offer.image} alt={offer.title} className="w-full h-40 object-cover rounded-md mb-4" />
+                <img src={offer.image} alt={offer.title} className="w-full object-cover rounded-md mb-4" />
                 <h3 className="text-lg font-semibold mb-2">{offer.title}</h3>
                 <p className="text-gray-600 mb-4">{offer.description}</p>
                 <span className="inline-block bg-yellow-500 text-white py-1 px-3 rounded-full">{offer.discount}</span>
@@ -211,7 +219,7 @@ const App = () => {
                 <p className="text-gray-700 mb-1">{store.address}</p>
                 <p className="text-gray-700 mb-1">
                   <FaPhone className="inline-block mr-2 text-blue-700" />
-                  {store.phone}
+                  <a href={`tel:${store.phone}`}>{store.phone}</a>{' '}
                 </p>
                 <p className="text-gray-500 text-sm flex items-center justify-center">
                   <FaClock className="inline-block mr-2 text-blue-700" />
