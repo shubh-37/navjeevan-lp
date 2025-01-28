@@ -155,6 +155,7 @@ const App = () => {
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
+          className='mb-5'
         >
           <h2 className="text-2xl font-bold text-center text-blue-900 mb-6">Our Stores</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -169,8 +170,12 @@ const App = () => {
                   {store.location}
                 </h3>
                 <p className="text-gray-700 mb-1">{store.address}</p>
-                <button className="text-gray-700 mb-1 cursor-pointer" onClick={() => openWhatsapp(store.phone)}>
-                  <FaPhone className="inline-block mr-2 text-blue-700" />
+                <button
+                  className="flex items-center justify-center w-full text-gray-700 mb-1 cursor-pointer"
+                  onClick={() => openWhatsapp(store.phone)}
+                >
+                  {/* <FaPhone className="inline-block mr-2 text-blue-700" /> */}
+                  <FaPhone className=" mr-1 text-blue-500" />/<img src={whatsapp} alt="" className="mr-2 ml-1 w-5 " />
                   {store.phone}
                 </button>
                 <p className="text-gray-500 text-sm flex items-center justify-center">
