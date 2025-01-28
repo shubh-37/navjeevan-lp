@@ -8,7 +8,7 @@ import oil from './assets/oil.jpg';
 import offer1 from './assets/offer-1.jpeg';
 import offer3 from './assets/offer-3.jpeg';
 import offer4 from './assets/offer-4.jpeg';
-import whatsapp from './assets/Whatsapp.svg';
+import whatsapp from './assets/WhatsApp.svg';
 const App = () => {
   const offers = [
     {
@@ -111,8 +111,8 @@ const App = () => {
     visible: { opacity: 1, y: 0 }
   };
 
-  function openWhatsapp() {
-    window.open('https://wa.me/918766860657', '_blank');
+  function openWhatsapp(number) {
+    window.open(`https://wa.me/918766860657`, '_blank');
   }
 
   return (
