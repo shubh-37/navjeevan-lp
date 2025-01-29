@@ -16,9 +16,7 @@ const App = () => {
     },
     {
       id: 2,
-      title: '12 + 1',
-      description: 'Shop for 12 months in our store and get 1 month off',
-      discount: 'Get 1 month off on groceries',
+      title: 'Purchase on 12 Months + Get 1 Month Purchase Free',
       image: offer2
     },
     {
@@ -142,7 +140,9 @@ const App = () => {
                 <img src={offer.image} alt={offer.title} className="w-full object-cover rounded-md mb-4" />
                 <h3 className="text-lg font-semibold mb-2">{offer.title}</h3>
                 <p className="text-gray-600 mb-4">{offer.description}</p>
-                <span className="inline-block bg-yellow-500 text-white py-1 px-3 rounded-full">{offer.discount}</span>
+                {offer.discount && (
+                  <span className="inline-block bg-yellow-500 text-white py-1 px-3 rounded-full">{offer.discount}</span>
+                )}
               </motion.div>
             ))}
           </div>
@@ -170,6 +170,11 @@ const App = () => {
                   {store.location}
                 </h3>
                 <p className="text-gray-700 mb-1">{store.address}</p>
+                <p className="flex items-center justify-center w-full text-gray-700 mb-1 cursor-pointer">
+                  {/* <FaPhone className="inline-block mr-2 text-blue-700" /> */}
+                  <FaPhone className=" mr-1 text-blue-500" />
+                  {`+91-${store.phone}`}
+                </p>
                 <div className="flex gap-4">
                   <button
                     className="flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-2 rounded-lg shadow-md transition duration-300 my-2"
@@ -220,9 +225,7 @@ const App = () => {
               </a>
             </div>
           </div>
-          <p className="text-center mt-4 md:mt-0">
-            © 1964-{new Date().getFullYear()}. Navjeevan Plus Supershop.
-          </p>
+          <p className="text-center mt-4 md:mt-0">© 1964-{new Date().getFullYear()}. Navjeevan Plus Supershop.</p>
         </div>
       </footer>
     </div>
