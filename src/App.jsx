@@ -2,25 +2,25 @@ import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from './assets/logo.png';
 import offer1 from './assets/offer-1.jpeg';
-import banner from './assets/navjeevan.jpg';
+import banner from './assets/banner.jpeg';
 import offer4 from './assets/offer-4.jpeg';
+import offer2 from './assets/offer-2.jpeg';
 import whatsapp from './assets/WhatsApp.svg';
 const App = () => {
   const offers = [
     {
       id: 1,
-      title: 'Minimum 5% off',
-      description: 'Get 5% off on groceries',
+      title: 'Minimum 5% off on MRP*',
       discount: '5% OFF',
       image: offer1
     },
-    // {
-    //   id: 3,
-    //   title: 'Bulk Purchase',
-    //   description: 'Extra 10% off on purchases above ₹5000',
-    //   discount: '10% OFF',
-    //   image: offer3
-    // },
+    {
+      id: 2,
+      title: '12 + 1',
+      description: 'Shop for 12 months in our store and get 1 month off',
+      discount: 'Get 1 month off on groceries',
+      image: offer2
+    },
     {
       id: 4,
       title: 'Super Saver Sunday',
@@ -94,7 +94,7 @@ const App = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           />
-          <div className="text-center md:text-right mt-2 md:mt-0">
+          {/* <div className="text-center md:text-right mt-2 md:mt-0">
             <button
               className="flex items-center justify-center md:justify-end cursor-pointer"
               onClick={() => openWhatsapp(918766860657)}
@@ -104,7 +104,7 @@ const App = () => {
             <p className="flex items-center justify-center md:justify-end">
               <FaEnvelope className="mr-2" /> contact@navjeevan.com
             </p>
-          </div>
+          </div> */}
         </div>
       </header>
       {/* Banner Section */}
@@ -155,7 +155,7 @@ const App = () => {
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className='mb-5'
+          className="mb-5"
         >
           <h2 className="text-2xl font-bold text-center text-blue-900 mb-6">Our Stores</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -170,15 +170,23 @@ const App = () => {
                   {store.location}
                 </h3>
                 <p className="text-gray-700 mb-1">{store.address}</p>
-                <button
-                  className="flex items-center justify-center w-full text-gray-700 mb-1 cursor-pointer"
-                  onClick={() => openWhatsapp(store.phone)}
-                >
-                  {/* <FaPhone className="inline-block mr-2 text-blue-700" /> */}
-                  <FaPhone className=" mr-1 text-blue-500" />/<img src={whatsapp} alt="" className="mr-2 ml-1 w-5 " />
-                  {store.phone}
-                </button>
-                <p className="text-gray-500 text-sm flex items-center justify-center">
+                <div className="flex gap-4">
+                  <button
+                    className="flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-2 rounded-lg shadow-md transition duration-300 my-2"
+                    onClick={() => openWhatsapp(store.phone)}
+                  >
+                    <img src={whatsapp} alt="" className="mr-2 ml-1 w-5" />
+                    Order on Whatsapp
+                  </button>
+                  <button className="flex items-center justify-center w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-2 rounded-lg shadow-md transition duration-300 my-2">
+                    <a href={`tel:${store.phone}`} className="flex items-center gap-2">
+                      <FaPhone className="text-white" />
+                      Order on Phone
+                    </a>
+                  </button>
+                </div>
+
+                <p className="text-gray-500 text-md flex items-center justify-center">
                   <FaClock className="inline-block mr-2 text-blue-700" />
                   {store.storeTimings}
                 </p>
@@ -212,7 +220,9 @@ const App = () => {
               </a>
             </div>
           </div>
-          <p className="mt-4 md:mt-0">© Navjeevan Plus Supershop. Since 1964-{new Date().getFullYear()}.</p>
+          <p className="text-center mt-4 md:mt-0">
+            © Since 1964-{new Date().getFullYear()}. Navjeevan Plus Supershop.
+          </p>
         </div>
       </footer>
     </div>
