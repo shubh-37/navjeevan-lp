@@ -221,7 +221,7 @@ const App = () => {
             </div>
           </div>
           <p className="text-center mt-4 md:mt-0">
-            © Since 1964-{new Date().getFullYear()}. Navjeevan Plus Supershop.
+            © 1964-{new Date().getFullYear()}. Navjeevan Plus Supershop.
           </p>
         </div>
       </footer>
