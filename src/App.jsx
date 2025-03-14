@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 import logo from './assets/logo.png';
 import offer1 from './assets/offer-1.jpeg';
 import banner from './assets/banner.jpeg';
@@ -92,17 +92,6 @@ const App = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           />
-          {/* <div className="text-center md:text-right mt-2 md:mt-0">
-            <button
-              className="flex items-center justify-center md:justify-end cursor-pointer"
-              onClick={() => openWhatsapp(918766860657)}
-            >
-              <FaPhone className="mr-1" />/<img src={whatsapp} alt="" className="mr-2 ml-1 w-5" /> +91 8766860657
-            </button>
-            <p className="flex items-center justify-center md:justify-end">
-              <FaEnvelope className="mr-2" /> contact@navjeevan.com
-            </p>
-          </div> */}
         </div>
       </header>
       {/* Banner Section */}
@@ -202,8 +191,8 @@ const App = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-blue-900 text-white py-8">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <footer className="bg-blue-900 text-white py-8 px-5">
+        <div className="flex items-center justify-between gap-5">
           <div>
             <h3 className="text-lg font-bold mb-2">Follow Us</h3>
             <div className="flex space-x-4">
